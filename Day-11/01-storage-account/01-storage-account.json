@@ -1,22 +1,36 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        "storageAccountTier": {
+            "type": "string",
+            "metadata": {
+                "description": "tier of storage account"
+            },
+            "defaultValue": "Standard",
+            "allowedValues": [
+                "Standard",
+                "Premium"
+            ]
+        }
+    },
     "functions": [],
-    "variables": {},
+    "variables": {
+        "resourceName": "chaganotedemoresource"
+    },
     "resources": [
         {
-            "name": "abhioshekveeramalla11232",
+            "name": "[variables('resourceName')]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2023-01-01",
             "tags": {
-                "displayName": "abhioshekveeramalla11232"
+                "displayName": "[variables('resourceName')]"
             },
             "location": "[resourceGroup().location]",
             "kind": "StorageV2",
             "sku": {
-                "name": "Standard_LRS"
-                // "tier": "Premium"
+                "name": "Standard_LRS",
+                "tier": "[parameters('storageAccountTier')]"
             }
         }
     ],
