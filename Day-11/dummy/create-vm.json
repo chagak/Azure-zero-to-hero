@@ -16,6 +16,26 @@
                 "westeurope",
                 "southeastasia"
             ]
+        },
+        "vmSize": {
+            "type": "string",
+            "metadata": {
+                "description": "The size of the VM"
+            },
+            "defaultValue": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "type": "string",
+            "metadata": {
+                "description": "The username of the user"
+            },
+            "defaultValue": "azureuser"
+        },
+        "adminPublicKey": {
+            "type": "string",
+            "metadata": {
+                "description": "The SSH Key located on the local computer"
+            }
         }
     },
     "functions": [],
