@@ -35,7 +35,8 @@
             "type": "string",
             "metadata": {
                 "description": "The SSH Key located on the local computer"
-            }
+            },
+            "defaultValue": ""
         }
     },
     "functions": [],
@@ -177,6 +178,11 @@
                 "hardwareProfile": {
                     "vmSize": "[parameters('vmSize')]"
                 },
+                // "osProfile": {
+                //     "computerName": "ubuntuVM1",
+                //     "adminUsername": "azureuser",
+                //     "adminPassword": "azureuser@123"
+                // },
                 "osProfile": {
                     "computerName": "[variables('vmName')]",
                     "adminUsername": "[parameters('adminUsername')]",
