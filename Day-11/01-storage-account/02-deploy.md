@@ -3,7 +3,7 @@
 ### Create resource group
 
 ```
-az group create --name vscode --location 'Central US'
+az group create --name vscode --location 'East US'
 ```
 
 ### Create the storage account
